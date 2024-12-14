@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Edit Page</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit Station</h1>
+    <form action="/books/<%= book.id %>?_method=PUT" method="POST">
+      <div>
+        <label for="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value="<%= book.title %>"
+          required
+        />
+      </div>
+      <div>
+        <label for="author">Author:</label>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          value="<%= book.author %>"
+          required
+        />
+      </div>
+      <div>
+        <label for="genre">Genre:</label>
+        <input
+          type="text"
+          id="genre"
+          name="genre"
+          value="<%= book.genre %>"
+          required
+        />
+      </div>
+      <div>
+        <label for="releaseDate">Release Date:</label>
+        <input
+          type="Date"
+          id="releaseDate"
+          name="releaseDate"
+          value="<%= book.releaseDate %>"
+          required
+        />
+      </div>
+      <div>
+        <label for="doneReading">Read the book?</label>
+        <input
+          type="checkbox"
+          id="doneReading"
+          name="doneReading"
+          value="<%= book.doneReading %>"
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

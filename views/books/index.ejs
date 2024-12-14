@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Books station</title>
+  </head>
+  <body>
+    <a href="/books/new">Add a Book</a>
+    <a href="/">Home Page</a>
+    <h2>My reading space...</h2>
+    <div>
+      <% books.forEach(book => { %> <% if(book.doneReading === false){ %> <% }
+      %> <% }) %>
+    </div>
+    <h2>All the books that have been read...</h2>
+    <div>
+      <% books.forEach(book => { %> <% if(book.doneReading === true) { %>
+      <a href="/books/<%= book._id %>"></a>
+      <% } %> <% }) %>
+    </div>
+  </body>
+</html>
