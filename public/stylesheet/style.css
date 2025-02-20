@@ -1,8 +1,40 @@
-/* @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap"); */
-
 body {
   text-align: center;
 }
 a {
   padding: 20px;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.book-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.book-card a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.book-card a:hover {
+  color: #3498db;
+}
+
+.book-card p {
+  margin: 5px 0;
+  color: #666;
 }

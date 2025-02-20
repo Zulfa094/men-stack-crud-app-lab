@@ -33,16 +33,6 @@ app.get('/books', async (req, res) => {
   res.render('books/index', { books: allBooks })
 })
 
-// app.post('/books/new', async (req, res) => {
-//   if (req.body.doneReading === 'on') {
-//     req.body.doneReading = true
-//   } else {
-//     req.body.doneReading = false
-//   }
-//   await Book.create(req.body)
-//   res.redirect('books/new')
-// })
-
 app.get('/books/new', (req, res) => {
   res.render('books/new')
 })

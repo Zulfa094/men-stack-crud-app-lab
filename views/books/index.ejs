@@ -9,16 +9,31 @@
   <body>
     <a href="/books/new">Add a Book</a>
     <a href="/">Home Page</a>
-    <h2>My reading space...</h2>
-    <div>
-      <% books.forEach(book => { %> <% if(book.doneReading === false){ %> <% }
-      %> <% }) %>
+    <h2>My reading space... (Books to read)</h2>
+    <div class="books-grid">
+      <% books.forEach(book => { %>
+        <% if(book.doneReading === false) { %>
+          <div class="book-card">
+            <h3><a href="/books/<%= book._id %>"><%= book.title %></a></h3>
+            <p>Author: <%= book.author %></p>
+            <p>Genre: <%= book.genre %></p>
+            <p>Release Date: <%= book.releaseDate.toLocaleDateString() %></p>
+          </div>
+        <% } %>
+      <% }) %>
     </div>
     <h2>All the books that have been read...</h2>
-    <div>
-      <% books.forEach(book => { %> <% if(book.doneReading === true) { %>
-      <a href="/books/<%= book._id %>"></a>
-      <% } %> <% }) %>
+    <div class="books-grid">
+      <% books.forEach(book => { %>
+        <% if(book.doneReading === true) { %>
+          <div class="book-card">
+            <h3><a href="/books/<%= book._id %>"><%= book.title %></a></h3>
+            <p>Author: <%= book.author %></p>
+            <p>Genre: <%= book.genre %></p>
+            <p>Release Date: <%= book.releaseDate.toLocaleDateString() %></p>
+          </div>
+        <% } %>
+      <% }) %>
     </div>
   </body>
 </html>
